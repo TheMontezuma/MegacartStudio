@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+</head>
+<body>
+<h2>Das Tool für das 512k, 2MB und 4MB Flash MegaCart Modul</h2>
+<p>Das Megacart Studio erstellt eine ROM- und bootfähige ATR-Datei, die zur Programmierung eines 512k und 4MB Flash MegaCart Modul dient. Der 2MB Megacart File wird nicht vom 512k und 4MB Flash MegaCart unterstützt, er kann kostenlos von den Anwendern des The!Cart Moduls genutzt werden.</p>
+<p>Die Atari-Dateien "*.com", "*.exe", "*.xex", "*.rom"(8K,16K), "*.bin"(8K,16K) und "*.atr" werden per Drag & Drop oder über das "Projekt" Menü "Atari-Dateien zum Projekt hinzufügen" in eine Sammlung kopiert. Zur Sicherung einer fertigen Sammlung können diese als *.mcp Megacart-Projekt Datei komprimiert gespeichert und später auch auf einem anderem PC geöffnet werden.</p>
+<p>Der Name eines Files wird automatisch in der Menüzeile mit insgesamt 33 Zeichen übernommen. Mit einem Doppelklick in der Spalte lassen sich die Titel nachträglich editieren.</p>
+<p>Per Rechtsklick/Kontextmenü können einzelne Programme in dem gleichen vorgewählten Verzeichnis gespeichert oder auch aus der Sammlung entfernt werden.</p>
+<p>Die Reihenfolge von Filenamen ist per Drag & Drop beliebig veränderbar. Das "Edit" Menü bietet zusätzlich die alphabetische Sortierung an.</p>
+<h2>Multi-ATR-Anbindung</h2>
+<p>Voraussetzungen dafür sind: Ein Original Atari XL/XE OS, das Atari 400/800 OS wird nicht unterstützt und alle zugehörigen ATR-Files sind mit gleicher Namenskennung und dem Zählerindex am Ende von D1 bis D8 zu bezeichnen.<br>
+Dabei müssen diese in der Reihenfolge hintereinander liegen. Ändert sich der Text in der Namenskennung im Verlauf, ist die Anbindung der ATR-Files aufgehoben.</p>
+<p>Ein Beispiel:<br>
+DATEI 1: STEREO D1.ATR<br>
+DATEI 1: STEREO D2.ATR<br>
+DATEI 1: STEREO D3.ATR<br>
+DATEI 1: STEREO SUPERSOUND D4.ATR<br>
+DATEI 1: STEREO D5.ATR<br></p>
+<p>Die ersten drei Files - STEREO D1.ATR  bis STEREO D3.ATR werden zusammengefügt, STEREO SUPERSOUND D4.ATR und STEREO D5.ATR sind einzelne eigenständige ATR-Files ohne Bindung.</p>
+<p>
+Im Betrieb können über folgende Tastenkombinationen die im Modul eingebundenen ATR-Files eingewechselt werden:<br>
+SHIFT-CONTROL-1 setzt den Zeiger im Modul auf die Diskette 1<br>
+SHIFT-CONTROL-2 setzt den Zeiger im Modul auf die Diskette 2<br>
+SHIFT-CONTROL-3 setzt den Zeiger im Modul auf die Diskette 3<br>
+SHIFT-CONTROL-4 setzt den Zeiger im Modul auf die Diskette 4<br>
+SHIFT-CONTROL-5 setzt den Zeiger im Modul auf die Diskette 5<br>
+SHIFT-CONTROL-6 setzt den Zeiger im Modul auf die Diskette 6<br>
+SHIFT-CONTROL-7 setzt den Zeiger im Modul auf die Diskette 7<br>
+SHIFT-CONTROL-8 setzt den Zeiger im Modul auf die Diskette 8<br>
+Dabei wird automatisch der SIO Zugriff der Diskettenstation 1 deaktiviert.</p>
+<p>Auf eine Original-Diskettenstation 1 kann über die Tastatureingabe SHIFT-CONTROL-9 umgeschaltet werden, ein Reset wird mittels SHIFT-CONTROL-DELETE ausgeführt.</p>
+<p>Betätigt man bei dem Start eines ATR-Files die Option Taste und hält diese gedrückt, so schaltet sich das Atari Basic ein.</p>
+<h2>Programme testen</h2>
+<p>Die Files werden im fertigen Modul von einem "Modul Dos" oder "ATR-Loader" oder "Rom-Loader" geladen und gestartet. Es wird empfohlen neue Programme mittels Test im Emulator auf Kompatibilität zu überprüfen.</p>
+<p>Für einen Test ist ein Atari Emulator, wie zum Beispiel der Atari800, Atari800Win PLus 4.0 oder Altirra, notwendig. Über das "Edit" Menü sind unter "Pfade" Einstellungen für den Emulator-Pfad und das Ziel-Verzeichnis für die ROM und ATR Datei veränderbar.</p>
+<p>Wenn der Emulator-Pfad gesetzt ist, lässt sich jedes Programm per Rechtsklick im Kontextmenü testen. Dafür wird eine interne temporäre Car Datei für ein auswählbares Megacart 512K/2MB/4MB Modul erstellt und dem eingestellten Emulator übergeben. Hinweis - nicht jeder Emulator unterstützt die 2MB/4MB Version. Sollte ein XEX-File nicht starten, hat man die Möglichkeit eine alternative Adresse, $400 statt $700, für den Dos-Loader zu setzen und den Versuch erneut zu starten.</p>
+<h2>ROM Dateien generieren</h2>
+<p>Unter dem Menüpunkt Datei sind folgende Einträge verfügbar:
+<ul>
+  <li>Generiere 512kB ROM</li>
+  <li>Generiere 2MB ROM</li>
+  <li>Generiere 4MB ROM</li>
+</ul>
+<p>Nach Anwahl von "Generiere 512kB ROM", "Generiere 2MB ROM" oder "Generiere 4MB ROM" ist die Eingabe eines frei wählbaren Dateinames erforderlich. Nach Abschluss werden in dem vorgewählten Pfadnamen drei Files mit der gleichen Namensgebung erstellt:</p>
+<ul>
+  <li>ein bootfähiger ATR-File</li>
+  <li>ein ROM-File</li>
+  <li>eine Textdatei mit der Liste der hinzugefügten Atari Programme</li>
+</ul>
+<p>Die Größe der ATR Dateien hängt von dem Modultyp ab. In allen ATR Files wird beim booten automatisch der "Easy MegaCart Programer" geladen. Um den Flashvorgang zu starten ist nur die Bestätigung der "Y" Taste erfoderlich.</p>
+<p><b>Achtung</b>, es werden dabei alle Daten auf dem MegaCart Modul gelöscht, diese können nicht mehr wiederhergestellt werden. Eine Sicherung ist nur mit dem "MegaCart Programer" möglich.</p>
+<p>Jeder andere Tasteneingabe führt in das Dos zurück. Der "Easy MegaCart Programer" gibt im Störungsfall nur ein "FATAL ERROR" aus. Um die genaue Ursache dafür zu ermitteln, sollte das ROM mit dem "MegaCart Programer" erneut geflasht werden. Dieser befindet sich auch auf dem ATR File mit der Bezeichnung "Flash4MB.COM".</p>
+<p>Hält man beim booten des ATR-Files die Option Taste am Atari gedrückt, aktiviert sich der High Speed SIO Patch für das XL/XE Betriebssystem von Matthias Reichl. Um den Flashvorgang zu beschleunigen, sollte eine High Speed SIO Übertragung immer eingeschaltet sein.</p>
+<p>Die *.ROM Dateien können auf dem Atari mit "MegaCart Programer" Tool geflasht werden. Bei der Benutzung von AspeQt ist das Ziel-Verzeichnis zu mounten oder alternativ die generierte ATR Datei zu laden.</p>
+<p>Der High Speed SIO Patch für das XL/XE Betriebssystem wurde mit den Bedingungen der GNU General Public License, Version 2 unter <a href="http://www.horus.com/~hias/atari/#hipatch">http://www.horus.com/~hias/atari/#hipatch</a> veröffentlicht.</p>
+</body>
+</html>

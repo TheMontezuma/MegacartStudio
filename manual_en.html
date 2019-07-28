@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+</head>
+<body>
+<h2>The Tool for the 512k, 2MB and 4MB Flash MegaCart Module</h2>
+<p>The Megacart Studio generates a ROM and a bootable ATR files, that are used to flash a 512K and a 4MB MegaCart modules. The 2MB Megacart ROM files ar not supported by the "512k und 4MB Flash MegaCart" tool and they were added only for convienience of the "The!Cart" module users. </p>
+<p>The Atari program files "*.com", "*.exe", "*.xex", "*.rom" (8K,16K), "*.bin" (8K,16K) and "*.atr" can be transferred to the program window via Drag & Drop or added via File menu.<BR>
+A ready collection can be stored as a *.mcp project and opened later on any PC. To save disk space, the project files are stored compressed.</p>
+<p>The Atari file names are used as titles (the first 33 characters). A doubleclick allows for title editing.</p>
+<p>The rightclick on a title opens a context menu, from which you can remove an item or save it in the predefined folder.</p>
+<p>The order of programs can be changed per Drag & Drop. The "Edit" menu offers an alphabeticall sorting as well.</p>
+<h2>Multi-ATR-Support</h2>
+<p>A precondition is an original Atari XL/XE OS (Atari 400/800 OS is not supported).<BR>
+Multidisk ATR Images have to be grouped. Their names can only differ at the last character, which represents a disk number (n=D1..D8).<BR>
+Example:<BR>
+<ul>
+  <li>Summer Games D1</li>
+  <li>Summer Games D2</li>
+</ul>
+Disk changing on the Atari is triggered via Control+Shift+&lt;n&gt; key combination (long press)<BR>
+Example:
+<ul>
+  <li>Control+Shift+1 (for Summer Games D1)</li>
+  <li>Control+Shift+2 (for Summer Games D2)</li>
+</ul>
+In these modes is the SIO access to the original floppy deactivated.<BR>
+Control+Shift+9 activates a standard floppy drive, so you can save your game results, etc.</p>
+<p>SHIFT-CONTROL-DELETE key combination triggers a RESET.</p>
+<p>If you keep the "OPTION" button pressed when starting an ATR file, the Atari BASIC will be activated.</p>
+<h2>Testing</h2>
+<p>The programs are loaded and started in the Megacart module with the "Module DOS", "ATR-Loader" or with the "ROM-Loader".<BR>
+It is recommended to execute compatibility tests in the Atari emulator.</p>
+<p>You will need an Atari emulator for testing (for example atari800, Atari800Win or Altirra).<BR>
+Via "Edit" menu you can set a path to the emulator and adjust the path to the output folder, where the *.ROM and *.ATR files are generated.</p>
+<p>If the emulator path is set, you can trigger a test by rightclicking on an item title and selecting "Test (XXX)" from the context menu (where XXX is a module type).<BR>
+Megacart Studio will create a temporary *.car file for one of the supported module types (Megacart 512K/2MB/4MB) and pass it to the emulator of your choice.<BR>Please note that not all emulators support 2MB and 4MB carts.<BR>
+If you notice any problem with running xex files, please change the DOS Loader address to $400 instead of $700 and try it again.</p>
+<h2>Generating ROM files</h2>
+<p>From the "File" menu you can choose the following entries:</p>
+<ul>
+  <li>Generate 512K ROM</li>
+  <li>Generate 2MB ROM</li>
+  <li>Generate 4MB ROM</li>
+</ul>
+<p>After selecting "Generate XXX ROM" you will be asked to provide a file name.<BR>
+The tool will generate in the output folder 3 files with the same name:</p>
+<ul>
+  <li>a bootable ATR-file</li>
+  <li>a ROM-file</li>
+  <li>a text file with the list of the Atari programs</li>
+</ul>
+<p>The ATR file size depends on the module type. In ATR files the "Easy MegaCart Programer" will be started at boot time automatically. To start flashing, confirm it with "Y" key, all other keys bring you back to the DOS.</p>
+<p><b>WARNING!</b> All the items in the Megacart module will be deleted if you select "Y".</p>
+<p>If a "FATAL ERROR" occurs while flashing, you should try it again using the full blown version of the "MegaCart Programer" to retrieve a detailed error code.<BR>
+You will find the tool in the generated ATR file under the name "Flash4MB.COM".<BR>
+With "Flash4MB.COM" you can also create a backup of your module.</p>
+<p>If you keep the "OPTION" button pressed when booting from the ATR file, the High Speed SIO Patch for XL/XE OS from Matthias Reichl will be activated. To reduce waiting time, it is recommended to always activate the HI-Speed SIO Patch for flashing the module.</p>
+<p>The *.ROM files can be flashed on the Atari with the "MegaCart Programer" Tool. If you use the AspeQt tool, you can mount the output folder or simply load the generated ATR file.</p>
+<p>The High Speed SIO Patch for Atari XL/XE OS was published under GNU General Public License, Version 2 under <a href="http://www.horus.com/~hias/atari/#hipatch">http://www.horus.com/~hias/atari/#hipatch</a>.</p>
+</body>
+</html>

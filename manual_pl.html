@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+</head>
+<body>
+<h2>Program dla modułów MegaCart 512k, 2MB i 4MB Flash</h2>
+<p>Megacart Studio służy do generowania pliku ROM i bootowalnego pliku ATR, służących do programowania modułów Megacart 512K i 4MB. Pliki 2MB Megacart ROM nie są wspierane przez program "512k und 4MB Flash MegaCart", a ich generowanie zostało dodane jedynie dla wygody użytkowników modułu The!Cart.</p>
+<p>Pliki z programami Atari "*.com", "*.exe", "*.xex", "*.rom" (8K,16K), "*.bin" (8K,16K) i "*.atr" można dodać do kolekcji przeciągając je myszką nad okno programu lub za pomocą menu (Plik / Dodaj pliki Atari).<br>
+Jeśli kolekcja zostanie zapisana jako plik *.mcp (plik projektu Megacart), można ją będzie później otworzyć także na innym komputerze. Aby oszczędzać miejsce na dysku, kolekcje zapisywane są w formie skompresowanej.</p>
+<p>Tytuły tworzone są z nazw plików (przyciętych do 33 znaków). Podwójne kliknięcie na tytule umożliwia jego edycję.</p>
+<p>Klikając prawym klawiszem myszy na tytułach, można usuwać z kolekcji pojedyncze programy lub też zapisywać je w wybranym wcześniej katalogu.</p>
+<p>Kolejność programów można zmieniać przeciągając i upuszczając tytuły w wybranym miejscu. Dodatkowo sortowanie alfabetyczne dostępne jest z poziomu menu (Eytuj / Sortuj alfabetycznie).</p>
+<h2>Multi-ATR</h2>
+<p>Do tej funkcji wymagany jest orginalny system operacyjny Atari XL/XE (Atari 400/800 OS nie jest wspierane).<BR>
+Wielodyskowe pliki ATR muszą znajdować się obok siebie. Ich nazwy mogą różnić się jedynie ostatnim znakiem, numerem dysku (n=D1..D8).<BR>
+Przykład:
+<ul>
+  <li>Summer Games D1</li>
+  <li>Summer Games D2</li>
+</ul>
+Zmiana dyskietki na Atari odbywa się za pomocą kombinacji klawiszy Control+Shift+&lt;n&gt; (długie naciśnięcie)<BR>
+Przykład:
+<ul>
+  <li>Control+Shift+1 (dla Summer Games D1)</li>
+  <li>Control+Shift+2 (dla Summer Games D2)</li>
+</ul>
+Control+Shift+9 aktywuje standardową stację dyskietek (np. żeby zapisać stan gry).</p>
+<p>Kombinacja klawiszy SHIFT-CONTROL-DELETE powoduje RESET.</p>
+<p>Jeśli przy starcie pliku ATR trzymamy wciśnięty przycisk "OPTION", włączony zostanie Atari Basic.</p>
+<h2>Testowanie programów</h2>
+<p>Programy są ładowane i startowane w gotowym module za pomocą programu "Module DOS", "ATR-Loader" lub "ROM-Loader".<BR>
+Zaleca się wykonanie w emulatorze testów na kompatybilność.</p>
+<p>Do testów potrzebny jest emulator  Atari (np. atari800, Atari800Win lub Altirra).<BR>
+W Megacart Studio (menu Edycja / Ścieżki dostępu) należy ustawić ścieżkę dostępu do emulatora, można też ustawić katalog docelowy, do którego będą zapisywane pliki *.ROM i *.ATR ).</p>
+<p>Gdy ścieżka jest już ustawiona, można przetestować dowolny program klikając prawym klawiszem myszy na jego tytule i wybierając polecenie "Testuj (XXX)" z kontekstowego menu (gdzie XXX jest typem modułu).<BR>
+Megacart Studio tworzy w tym celu tymczasowy plik *.car dla danego modułu (512K/2MB/4MB) i startuje emulator przekazując mu plik jako parametr wywołania.<BR>
+Uwaga! Nie wszystkie emulatory potrafią emulować moduły Megacart 2MB i 4MB.<BR>
+W przypadku problemów z plikami xex istnieje możliwość zmiany adresu "Module DOS" Loader-a (z $700 na $400) i ponowienia testu.</p>
+<h2>Generowanie plików ROM</h2>
+<p>W menu "Plik" dostępne są następujące polecenia:</p>
+<ul>
+  <li>Generuj 512K ROM</li>
+  <li>Generuj 2MB ROM</li>
+  <li>Generuj 4MB ROM</li>
+</ul>
+<p>Po wybraniu jednego z powyższych poleceń, użytkownik  proszony jest o wprowadzenie nazwy pliku. Następnie w podanym katalogu tworzone są trzy pliki o tej samej nazwie:</p>
+<ul>
+  <li>startowalny plik ATR</li>
+  <li>plik ROM</li>
+  <li>plik TXT z listą programów ATARI</li>
+</ul>
+<p>Wielkość plików ATR zależy od typu modułu. W plikach tych startowany jest automatycznie "Easy MegaCart Programer". Żeby rozpocząć programowanie modułu należy nacisnąć przycisk "Y", inne przyciski to przejście z powrotem do DOS-a.</p>
+<p><b>Uwaga!</b> Aktualna zawartość modułu zostanie bezpowrotnie skasowana po naciśnięciu "Y".</p>
+<p>Jeśli podczas programowania wystąpi błąd "FATAL ERROR", należy powtórzyć programowanie używając do tego celu pełnej wersji programu "MegaCart Programer", aby odczytać kod błędu.<BR>
+Program ten znajduje się w wygenerowanych plikach ATR pod nazwą "Flash4MB.COM" i można go również użyć do utworzenia kopii zapasowej modułu.</p>
+<p>Jeśli przy starcie Atari trzymamy wciśnięty przycisk "OPTION", aktywowane są procedury Hi-Speed SIO (patch systemu operacyjnego XL/XE) autorstwa Matthias-a Reichl-a. Zaleca się uaktywnienie szybkiej transmisji SIO, żeby zredukować czas programowania modułów.</p>
+<p>Pliki *.ROM programowane są z poziomu Atari za pomocą programu "MegaCart Programer". W przypadku korzystania z programu AspeQt, można użyć funkcji "mount" dla katalogu docelowego lub alternatywnie załadować wygenerowany plik ATR.</p>
+<p>SIO Patch dla Atari XL/XE OS został opublikowany na licencji GNU General Public License w wersji 2, na stronie <a href="http://www.horus.com/~hias/atari/#hipatch">http://www.horus.com/~hias/atari/#hipatch</a>.</p>
+</body>
+</html>
